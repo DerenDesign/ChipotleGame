@@ -14,6 +14,7 @@ import javax.swing.JOptionPane;
 
 public class Game implements MouseListener, ActionListener {
 	public static JFrame frame;
+	public boolean isPlaying = false;
 	public static void main(String[] args) {
 		
 	
@@ -47,14 +48,15 @@ public class Game implements MouseListener, ActionListener {
 		int x = e.getX();
 		int y = e.getY();
 		
-		//System.out.println("X:" + x + "Y:" + y);
+		System.out.println("X:" + x + "Y:" + y);
 		
-		if(x > 155 &&  x < 360 && y > 515 && y < 625) {
+		if(x > 155 &&  x < 360 && y > 515 && y < 625 && !isPlaying ) {
 			JOptionPane.showMessageDialog(frame, "To win, you must guess the correct combination of ingredients for a Chipotle meal!\nYou only get 3 tries so make the most of it. Winners receive a BOGO chipotle code!");
 
 			
 		}
 		if( x > 140 && x < 390 && y > 400 && y < 475) {
+			  isPlaying = true;
 			  switchToGameplay();
 		}
 		
@@ -63,18 +65,30 @@ public class Game implements MouseListener, ActionListener {
 	private void switchToGameplay() {
 		// TODO Auto-generated method stub
 		frame.getContentPane().removeAll();
+		frame.setLayout(null);
+		
 		ImageIcon gameplayImage = new ImageIcon("H:\\git\\ChipotleGame\\images\\Game Screen.png");
-        
-		frame.add(new JLabel(gameplayImage));
+		JLabel background = new JLabel(gameplayImage);
+		background.setBounds(0, 0, gameplayImage.getIconWidth(), gameplayImage.getIconHeight());
 		
 		
+		ImageIcon heartImage = new ImageIcon("H:\\git\\ChipotleGame\\images\\WhiteHeart.png");
+		JLabel heart = new JLabel(heartImage);
+		JLabel heart2 = new JLabel(heartImage);
+		JLabel heart3 = new JLabel(heartImage);
+		heart.setBounds(25, 340, heartImage.getIconWidth(), heartImage.getIconHeight());
+		heart2.setBounds(175, 340, heartImage.getIconWidth(), heartImage.getIconHeight());
+		heart3.setBounds(325, 340, heartImage.getIconWidth(), heartImage.getIconHeight());
+		background.add(heart);
+		background.add(heart2);
+		background.add(heart3);
+		
+		frame.add(background);
 		frame.revalidate();
 		frame.repaint();
-		ImageIcon heartImage = new ImageIcon("H:\\git\\ChipotleGame\\images\\WhiteHeart.png");
-		JLabel label = new JLabel(heartImage);
-		label.setBounds(50, 50, heartImage.getIconWidth(), heartImage.getIconHeight());
-		frame.add(label);
-		frame.repaint();
+		
+		
+		
 	}
 
 	@Override
