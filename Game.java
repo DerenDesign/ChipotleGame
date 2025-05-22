@@ -55,9 +55,26 @@ public class Game implements MouseListener, ActionListener {
 			
 		}
 		if( x > 140 && x < 390 && y > 400 && y < 475) {
-			System.out.print("itWorks!");
+			  switchToGameplay();
 		}
 		
+	}
+
+	private void switchToGameplay() {
+		// TODO Auto-generated method stub
+		frame.getContentPane().removeAll();
+		ImageIcon gameplayImage = new ImageIcon("H:\\git\\ChipotleGame\\images\\Game Screen.png");
+        
+		frame.add(new JLabel(gameplayImage));
+		
+		
+		frame.revalidate();
+		frame.repaint();
+		ImageIcon heartImage = new ImageIcon("H:\\git\\ChipotleGame\\images\\WhiteHeart.png");
+		JLabel label = new JLabel(heartImage);
+		label.setBounds(50, 50, heartImage.getIconWidth(), heartImage.getIconHeight());
+		frame.add(label);
+		frame.repaint();
 	}
 
 	@Override
