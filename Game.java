@@ -58,6 +58,25 @@ public class Game implements MouseListener, ActionListener {
 		if( x > 140 && x < 390 && y > 400 && y < 475) {
 			  isPlaying = true;
 			  switchToGameplay();
+			  randomEntree();
+		}
+		
+	}
+
+	private void randomEntree() {
+		// TODO Auto-generated method stub
+		int max = 0;
+		int min = 0;
+		int randomNumber = (int)(Math.random() * (max-min) + 1) + min;
+		
+		if(randomNumber == 1) {
+			
+		}
+		if(randomNumber == 2) {
+			
+		}
+		if(randomNumber == 3) {
+			
 		}
 		
 	}
