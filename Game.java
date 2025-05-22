@@ -71,11 +71,16 @@ public class Game implements MouseListener, ActionListener {
 		
 		if(randomNumber == 1) {
 			
+			Burrito burrito = new Burrito();
+			
 		}
 		if(randomNumber == 2) {
+			BurritoBowl burritoBowl = new BurritoBowl();
+			
 			
 		}
 		if(randomNumber == 3) {
+			Tacos tacos = new Tacos();
 			
 		}
 		
