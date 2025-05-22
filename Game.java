@@ -54,6 +54,9 @@ public class Game implements MouseListener, ActionListener {
 
 			
 		}
+		if( x > 140 && x < 390 && y > 400 && y < 475) {
+			System.out.print("itWorks!");
+		}
 		
 	}
 
