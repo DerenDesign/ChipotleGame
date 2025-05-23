@@ -49,26 +49,53 @@ public class Game implements MouseListener, ActionListener {
 		int y = e.getY();
 		
 		System.out.println("X:" + x + "Y:" + y);
-		
+		//Help Button
 		if(x > 155 &&  x < 360 && y > 515 && y < 625 && !isPlaying ) {
 			JOptionPane.showMessageDialog(frame, "To win, you must guess the correct combination of ingredients for a Chipotle meal!\nYou only get 3 tries so make the most of it. Winners receive a BOGO chipotle code!");
 
 			
 		}
+		//Start Button
 		if( x > 140 && x < 390 && y > 400 && y < 475) {
 			  isPlaying = true;
 			  switchToGameplay();
 			  randomEntree();
 		}
+		//White Rice
+		//No Rice
+		//Black Beans
+		//Veggies
+		//Beef Barbocoa
+		//Chicken
+		//Sofritas
+		//Mild
+		//Spicy1
+		//Spicy2
+		//Corn
+		//Sour Cream
+		//Cheese
+		if(x > 88 && x < 115 && y > 553 && y < 602) {
+			System.out.println("Cheese");
+		}
+		//Guac
+		if(x > 54 && x < 82 && y > 550 && y < 603) {
+			System.out.println("Guac");
+		}
+		//Lettuce
+		if(x > 22 && x < 49 && y > 550 && y < 604) {
+			System.out.println("Lettuce");
+		}
+		
+		
 		
 	}
 
 	private void randomEntree() {
 		// TODO Auto-generated method stub
-		int max = 0;
-		int min = 0;
+		int max = 3;
+		int min = 1;
 		int randomNumber = (int)(Math.random() * (max-min) + 1) + min;
-		
+		System.out.println(randomNumber);
 		if(randomNumber == 1) {
 			
 			Burrito burrito = new Burrito();
