@@ -64,14 +64,18 @@ public class Game implements MouseListener, ActionListener {
 		}
 		//White Rice
 		if(x > 444 && x < 496 && y > 547 && y < 576) {
+			
 			System.out.println("White Rice");
-//			ImageIcon checkMark = new ImageIcon("H:\\git\\ChipotleGame\\images\\checkMark.png");
-//			JLabel check = new JLabel(checkMark);
-//			check.setBounds(25, 340, checkMark.getIconWidth(), checkMark.getIconHeight());
-//			background.add(check);
-//			frame.add(background);
-//			frame.revalidate();
-//			frame.repaint();
+			
+			ImageIcon checkMark = new ImageIcon("H:\\git\\ChipotleGame\\images\\Check.png");
+			JLabel check = new JLabel(checkMark);
+			
+			check.setBounds(440, 505, checkMark.getIconWidth(), checkMark.getIconHeight());
+			 background.setLayout(null);
+			background.add(check);
+			
+			frame.revalidate();
+			frame.repaint();
 		}
 		//No Rice
 		if(x > 442 && x < 496 && y > 578 && y < 606) {
