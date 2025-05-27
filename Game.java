@@ -14,6 +14,7 @@ import javax.swing.JOptionPane;
 
 public class Game implements MouseListener, ActionListener {
 	public static JFrame frame;
+	public static JLabel background;
 	public boolean isPlaying = false;
 	public static void main(String[] args) {
 		
@@ -64,6 +65,13 @@ public class Game implements MouseListener, ActionListener {
 		//White Rice
 		if(x > 444 && x < 496 && y > 547 && y < 576) {
 			System.out.println("White Rice");
+//			ImageIcon checkMark = new ImageIcon("H:\\git\\ChipotleGame\\images\\checkMark.png");
+//			JLabel check = new JLabel(checkMark);
+//			check.setBounds(25, 340, checkMark.getIconWidth(), checkMark.getIconHeight());
+//			background.add(check);
+//			frame.add(background);
+//			frame.revalidate();
+//			frame.repaint();
 		}
 		//No Rice
 		if(x > 442 && x < 496 && y > 578 && y < 606) {
@@ -143,16 +151,16 @@ public class Game implements MouseListener, ActionListener {
 		System.out.println(randomNumber);
 		if(randomNumber == 1) {
 			
-			Burrito burrito = new Burrito();
+			//Burrito burrito = new Burrito();
 			
 		}
 		if(randomNumber == 2) {
-			BurritoBowl burritoBowl = new BurritoBowl();
+			//BurritoBowl burritoBowl = new BurritoBowl();
 			
 			
 		}
 		if(randomNumber == 3) {
-			Tacos tacos = new Tacos();
+			//Tacos tacos = new Tacos();
 			
 		}
 		
@@ -164,7 +172,7 @@ public class Game implements MouseListener, ActionListener {
 		frame.setLayout(null);
 		
 		ImageIcon gameplayImage = new ImageIcon("H:\\git\\ChipotleGame\\images\\Game Screen.png");
-		JLabel background = new JLabel(gameplayImage);
+		background = new JLabel(gameplayImage);
 		background.setBounds(0, 0, gameplayImage.getIconWidth(), gameplayImage.getIconHeight());
 		
 		
