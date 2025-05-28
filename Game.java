@@ -15,19 +15,20 @@ import javax.swing.JOptionPane;
 public class Game implements MouseListener, ActionListener {
 	public static JFrame frame;
 	public static JLabel background;
+	private JLabel check;
 	public boolean isPlaying = false;
+	private ImageIcon checkMark = new ImageIcon("H:\\git\\ChipotleGame\\images\\Check.png");
+	private ImageIcon xMark = new ImageIcon("H:\\git\\ChipotleGame\\images\\redX.png");
+	private boolean isChecked = true;
+	
+	
 	public static void main(String[] args) {
 		
 	
 		
-		frame = new JFrame("Chipotle Vault");
-		frame.addMouseListener(new Game());
-        frame.setSize(500, 750);  
-        ImageIcon image1 = new ImageIcon("H:\\git\\ChipotleGame\\images\\Home Page.jpg");
-        frame.add(new JLabel(image1));
-        frame.pack();
-        frame.setVisible(true);  
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  
+		HomeScreen home = new HomeScreen();
+		home.getFrame();
+        
         
         
 		
@@ -49,7 +50,7 @@ public class Game implements MouseListener, ActionListener {
 		int x = e.getX();
 		int y = e.getY();
 		
-		System.out.println("X:" + x + "Y:" + y);
+		//System.out.println("X:" + x + "Y:" + y);
 		//Help Button
 		if(x > 155 &&  x < 360 && y > 515 && y < 625 && !isPlaying ) {
 			JOptionPane.showMessageDialog(frame, "To win, you must guess the correct combination of ingredients for a Chipotle meal!\nYou only get 3 tries so make the most of it. Winners receive a BOGO chipotle code!");
@@ -65,17 +66,18 @@ public class Game implements MouseListener, ActionListener {
 		//White Rice
 		if(x > 444 && x < 496 && y > 547 && y < 576) {
 			
-			System.out.println("White Rice");
+			if(isChecked) {
+				check.setIcon(checkMark);
+				
+			}
+			else {
 			
-			ImageIcon checkMark = new ImageIcon("H:\\git\\ChipotleGame\\images\\Check.png");
-			JLabel check = new JLabel(checkMark);
+				check.setIcon(null);
+			}
+			isChecked = !isChecked;
+			 frame.revalidate();
+			    frame.repaint();
 			
-			check.setBounds(440, 505, checkMark.getIconWidth(), checkMark.getIconHeight());
-			 background.setLayout(null);
-			background.add(check);
-			
-			frame.revalidate();
-			frame.repaint();
 		}
 		//No Rice
 		if(x > 442 && x < 496 && y > 578 && y < 606) {
@@ -190,6 +192,13 @@ public class Game implements MouseListener, ActionListener {
 		background.add(heart);
 		background.add(heart2);
 		background.add(heart3);
+		
+		check = new JLabel();
+		check.setBounds(440, 505, checkMark.getIconWidth(), checkMark.getIconHeight());
+		background.setLayout(null);
+		background.add(check);
+		frame.revalidate();
+		frame.repaint();
 		
 		frame.add(background);
 		frame.revalidate();

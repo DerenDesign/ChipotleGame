@@ -1,3 +1,4 @@
+import java.util.Random;
 
 public class Burrito  extends Ingredients{
 
@@ -9,6 +10,21 @@ public class Burrito  extends Ingredients{
 				corn, sourCream, cheese, guac, lettuce, tortilla);
 		// TODO Auto-generated constructor stub
 	}
+	
+	public boolean whiteRice() {
+		
+		int randomNumber = (int) (Math.random() * (2-1) +1 ) +1;
+		
+		if(randomNumber % 2 == 0) {
+			return true;
+		}
+		else {
+			return false;
+		}
+		
+		
+	}
+	
 
 	
 
