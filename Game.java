@@ -18,7 +18,8 @@ public class Game extends JPanel {
 
     public void startGame() {
         setScreen(new HomeScreen(this));
-                frame.setVisible(true);
+        frame.setVisible(true);
+        
             }
         
     void setScreen(JPanel screen) {

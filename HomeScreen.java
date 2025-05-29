@@ -8,18 +8,21 @@ public class HomeScreen extends JPanel {
     private boolean isPlaying = false;
 
     public HomeScreen(Game game) {
-        this.game = game;
-        this.isPlaying = false;
+        this.game = game; 
         setLayout(null);
         startUp();
     }
 
     private void startUp() {
-        ImageIcon homeImage = new ImageIcon("H:\\git\\ChipotleGame\\images\\Home Screen.png");
+       ImageIcon homeImage = new ImageIcon("images/Game Screen.png");
+        
         background = new JLabel(homeImage);
         background.setBounds(0, 0, homeImage.getIconWidth(), homeImage.getIconHeight());
-        add(background);
         
+        background.setVisible(true);
+        add(background);
+        System.out.println("Home Screen Initialized");
+
         background.addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e) {
